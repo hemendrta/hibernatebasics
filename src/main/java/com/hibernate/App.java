@@ -1,7 +1,11 @@
 package com.hibernate;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import com.hibernate.entities.Employee;
 
 /*
 
@@ -35,7 +39,12 @@ public class App {
 		SessionFactory sessionFactory = configuration.configure().buildSessionFactory();
 
 		System.out.println(sessionFactory.isClosed()); /* Checking if the session in open or not. */
-		sessionFactory.openSession(); /* opening the session. */
+		Session session = sessionFactory.openSession(); /* opening the session. */
 		System.out.println(sessionFactory.isOpen()); /* checking if the session is open or not. */
+		Transaction transaction = session.beginTransaction(); /* Begining the transaction. */
+		session.save(new Employee(101, "Hemendra Singh Chouhan", "Indore")); /* Persisting data to the table. */
+		transaction.commit(); /* Commiting the changes to the database. */
+		session.close();
+
 	}
 }
