@@ -12,6 +12,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.hibernate.entities.Address;
+import com.hibernate.entities.Contact;
 import com.hibernate.entities.Employee;
 
 /*
@@ -88,6 +89,8 @@ public class App {
 		employee.setEmployeeId(101);
 		employee.setEmployeeName("Hemendra Singh Chouhan");
 		employee.setEmployeeCity("Indore");
+		employee.setContactInformation(
+				new Contact(7999996891l, 1234567890l, "hemendra.singh.c@outlook.com", "hemendrac142@gmail.com"));
 
 		/* Persisting object to the database */
 
@@ -108,6 +111,12 @@ public class App {
 		 * 
 		 * So use get if you are not sure whether the object exists in the database
 		 * whereas use load if you are sure that data exists in the database.
+		 * 
+		 * 
+		 * @Embeddable is used for the class for which we do not want table to be
+		 * created rather the field of which we need to be associated or present in
+		 * another entity. Usage of same could be seen in the Contact class which is
+		 * used as a property in Employee class.
 		 */
 
 		Address address2 = session.get(Address.class, 1);

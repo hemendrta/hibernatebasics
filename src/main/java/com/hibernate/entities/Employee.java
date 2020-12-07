@@ -11,17 +11,19 @@ public class Employee {
 	private int employeeId;
 	private String employeeName;
 	private String employeeCity;
+	private Contact contactInformation;
 
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int employeeId, String employeeName, String employeeCity) {
+	public Employee(int employeeId, String employeeName, String employeeCity, Contact contactInformation) {
 		super();
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.employeeCity = employeeCity;
+		this.contactInformation = contactInformation;
 	}
 
 	public int getEmployeeId() {
@@ -48,10 +50,18 @@ public class Employee {
 		this.employeeCity = employeeCity;
 	}
 
+	public Contact getContactInformation() {
+		return contactInformation;
+	}
+
+	public void setContactInformation(Contact contactInformation) {
+		this.contactInformation = contactInformation;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeCity="
-				+ employeeCity + "]";
+				+ employeeCity + ", contactInformation=" + contactInformation + "]";
 	}
 
 }
