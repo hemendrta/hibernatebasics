@@ -98,6 +98,46 @@ public class App {
 
 		transaction.commit();
 
+		/* Fetching object from the database */
+
+		/*
+		 * We can use get and load for fetching the data, difference between both of
+		 * them will be explained in detail. If in case the value is not present in the
+		 * database for the primary key then in that case get will return null whereas
+		 * load will give ObjectNotFoundException but never returns null.
+		 * 
+		 * So use get if you are not sure whether the object exists in the database
+		 * whereas use load if you are sure that data exists in the database.
+		 */
+
+		Address address2 = session.get(Address.class, 1);
+		Address address3 = session.get(Address.class, 2);
+		System.out.println(address2.getAddressId() + " : " + address2.getCountry() + " : " + address2.getState() + " : "
+				+ address2.getCity());
+
+		try {
+			System.out.println(address3.getAddressId() + " : " + address3.getCountry() + " : " + address3.getState()
+					+ " : " + address3.getCity());
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getClass());
+		}
+		Employee employee2 = session.load(Employee.class, 101);
+
+		Employee employee3 = session.load(Employee.class, 102);
+
+		System.out.println(employee2);
+
+		try {
+			System.out.println(employee3);
+		}
+
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getClass());
+		}
 		/* Closing the session */
 		session.close();
 
