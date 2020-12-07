@@ -4,21 +4,35 @@
 <hibernate-configuration>
 
 	<session-factory>
-		
+
 		<!-- Database Connection Properties -->
-		
-		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property> It is not mandatory to provide the driver class name-->
+
+		<!-- <property name="connection.driver_class">com.mysql.jdbc.Driver</property> 
+			It is not mandatory to provide the driver class name -->
+			
 		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatetutorial</property>
+		
 		<property name="connection.username">root</property>
+		
 		<property name="connection.password">root</property>
+		
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-		<property name="hbm2ddl.auto">update</property>
+		
+		<property name="hbm2ddl.auto">create</property> <!-- We can specify "create" if we want that at every run new data tables 
+			are to be created, update will check if table exist then it wont create. -->
 		<property name="show_sql">true</property>
-		
-		<!-- We have to mention the name of class for which we want the table to be created automatically. -->
-		
-		<mapping class="com.hibernate.entities.Employee"/>
-		
+
+		<!-- We have to mention the name of class for which we want the table to 
+			be created automatically. -->
+
+		<!-- Mapping for Employee class -->
+
+		<mapping class="com.hibernate.entities.Employee" />
+
+		<!-- Mapping for Address class -->
+
+		<mapping class="com.hibernate.entities.Address" />
+
 	</session-factory>
 
 </hibernate-configuration>
