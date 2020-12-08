@@ -32,6 +32,14 @@
 		<!-- Mapping for Address class -->
 
 		<mapping class="com.hibernate.entities.Address" />
+		
+		<!-- Mapping for the question class -->
+		
+		<mapping class="com.map.Question" />
+		
+		<!-- Mapping for the answer class -->
+		
+		<mapping class="com.map.Answer" />
 
 	</session-factory>
 
