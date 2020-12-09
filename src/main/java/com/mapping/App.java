@@ -27,7 +27,7 @@ public class App {
 
 		Certificate certificate1 = new Certificate();
 		certificate1.setCertificateId(102);
-		certificate1.setCertificateName("Python Certification");
+		certificate1.setCertificateName("Oracle Certification");
 
 		Certificate certificate2 = new Certificate();
 		certificate2.setCertificateId(103);
@@ -64,6 +64,15 @@ public class App {
 		session.save(person);
 
 		transaction.commit();
+
+		/* Fetching information from the database */
+
+		Person person2 = session.get(Person.class, 123456789);
+		System.out.println(person2.getAadhar() + " : " + person2.getName());
+
+		for (Certificate certificate4 : person2.getCertificates()) {
+			System.out.println(certificate4.getCertificateId() + " : " + certificate4.getCertificateName());
+		}
 
 		session.close();
 
