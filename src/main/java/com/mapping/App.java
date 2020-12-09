@@ -37,11 +37,6 @@ public class App {
 		certificate3.setCertificateId(104);
 		certificate3.setCertificateName("Testing Certification");
 
-		session.save(certificate);
-		session.save(certificate1);
-		session.save(certificate2);
-		session.save(certificate3);
-
 		/* creating person */
 
 		Person person = new Person();
@@ -49,6 +44,22 @@ public class App {
 		person.setName("Hemendra Singh Chouhan");
 		person.setEmail("hemendra.singh.c@outlook.com");
 		person.setCertificates(Arrays.asList(certificate, certificate1, certificate2, certificate3));
+
+		/* setting the person for the certificates so that can have joined table */
+
+		certificate.setPerson(person);
+		certificate1.setPerson(person);
+		certificate2.setPerson(person);
+		certificate3.setPerson(person);
+
+		/* persisting certificate objects */
+
+		session.save(certificate);
+		session.save(certificate1);
+		session.save(certificate2);
+		session.save(certificate3);
+
+		/* persisting person object */
 
 		session.save(person);
 

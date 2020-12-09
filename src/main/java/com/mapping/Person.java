@@ -14,7 +14,7 @@ public class Person {
 	private String name;
 	private String email;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "person")
 	private List<Certificate> certificates;
 
 	public Person() {

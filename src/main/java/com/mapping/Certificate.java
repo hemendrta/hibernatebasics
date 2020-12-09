@@ -2,17 +2,28 @@ package com.mapping;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Certificate {
-	
+
 	@Id
 	private int certificateId;
 	private String certificateName;
 
-	@Override
-	public String toString() {
-		return "Certificate [certificateId=" + certificateId + ", certificateName=" + certificateName + "]";
+	@ManyToOne
+	private Person person;
+
+	public Certificate() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Certificate(int certificateId, String certificateName, Person person) {
+		super();
+		this.certificateId = certificateId;
+		this.certificateName = certificateName;
+		this.person = person;
 	}
 
 	public int getCertificateId() {
@@ -31,15 +42,18 @@ public class Certificate {
 		this.certificateName = certificateName;
 	}
 
-	public Certificate(int certificateId, String certificateName) {
-		super();
-		this.certificateId = certificateId;
-		this.certificateName = certificateName;
+	public Person getPerson() {
+		return person;
 	}
 
-	public Certificate() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	@Override
+	public String toString() {
+		return "Certificate [certificateId=" + certificateId + ", certificateName=" + certificateName + ", person="
+				+ person + "]";
 	}
 
 }
