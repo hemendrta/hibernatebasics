@@ -2,6 +2,7 @@ package com.map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,6 +16,10 @@ public class Question {
 	/*
 	 * To specify that there is one to one mapping between for each question with
 	 * answer
+	 */
+	@JoinColumn(name = "answer_id")
+	/*
+	 * This specifies the collumn of the foreign key and name is to change the name
 	 */
 	private Answer answer;
 

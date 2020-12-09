@@ -2,6 +2,8 @@ package com.map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Answer {
@@ -9,6 +11,11 @@ public class Answer {
 	@Id
 	private int answerId;
 	private String answer;
+	
+	/* @OneToOne */
+	@OneToOne(mappedBy = "answer")
+	/* @JoinColumn(name = "question_id") */
+	private Question question;
 
 	public Answer() {
 		super();
@@ -37,9 +44,17 @@ public class Answer {
 		this.answer = answer;
 	}
 
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
 	@Override
 	public String toString() {
-		return "Answer [answerId=" + answerId + ", answer=" + answer + "]";
+		return "Answer [answerId=" + answerId + ", answer=" + answer + ", question=" + question + "]";
 	}
 
 }
