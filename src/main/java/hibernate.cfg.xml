@@ -49,6 +49,14 @@
 
 		<mapping class="com.mapping.Certificate" />
 
+		<!-- Mapping for the Employee class Many to Many Example class -->
+
+		<mapping class="com.hibernate.mapping.manytomany.Employee" />
+
+		<!-- Mapping for the Project class Many to Many Example class -->
+
+		<mapping class="com.hibernate.mapping.manytomany.Project" />
+
 	</session-factory>
 
 </hibernate-configuration>
