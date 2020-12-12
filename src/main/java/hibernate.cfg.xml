@@ -21,6 +21,8 @@
 		<property name="hbm2ddl.auto">create</property> <!-- We can specify "create" if we want that at every run new data tables 
 			are to be created, update will check if table exist then it wont create. -->
 		<property name="show_sql">true</property>
+		
+		<property name="format_sql">true</property>
 
 		<!-- We have to mention the name of class for which we want the table to 
 			be created automatically. -->
@@ -56,6 +58,14 @@
 		<!-- Mapping for the Project class Many to Many Example class -->
 
 		<mapping class="com.hibernate.mapping.manytomany.Project" />
+
+		<!-- Mapping for the Candidate class Data loading example -->
+
+		<mapping class="com.hibernate.dataloading.Candidate" />
+
+		<!-- Mapping for the Session class Data loading example -->
+
+		<mapping class="com.hibernate.dataloading.CandidateSession" />
 
 	</session-factory>
 

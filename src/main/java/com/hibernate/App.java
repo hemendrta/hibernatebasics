@@ -47,7 +47,7 @@ public class App {
 //		SessionFactory sessionFactory = configuration.configure().buildSessionFactory();
 ////
 //		System.out.println(sessionFactory.isClosed()); /* Checking if the session in open or not. */
-//		Session session = sessionFactory.openSession(); /* opening the session. */
+//		CandidateSession session = sessionFactory.openSession(); /* opening the session. */
 //		System.out.println(sessionFactory.isOpen()); /* checking if the session is open or not. */
 //		Transaction transaction = session.beginTransaction(); /* Beginning the transaction. */
 //		session.save(new Employee(101, "Hemendra Singh Chouhan", "Indore")); /* Persisting data to the table. */
