@@ -17,7 +17,7 @@ public class EmployerEmployee {
 	private int id;
 	private String name;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "employeremployees")
 	private List<Employer> employers;
 
 	@Override

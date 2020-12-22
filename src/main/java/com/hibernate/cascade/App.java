@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-/*Example of cascading: Persisting the main entity and dependent enstities will be persisted automatically.*/
+/*Example of cascading: Persisting the main entity and dependent entities will be persisted automatically.*/
 
 public class App {
 	
