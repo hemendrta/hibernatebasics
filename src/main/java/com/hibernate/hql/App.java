@@ -2,11 +2,13 @@ package com.hibernate.hql;
 
 import java.util.List;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
+
 
 public class App {
 	public static void main(String[] args) {
@@ -58,7 +60,7 @@ public class App {
 		String query3 = "from PersonPersonalInfo where id=:x";
 
 		Query query4 = session.createQuery(query3);
-		Query parameter = query4.setParameter("x", 101);
+		Query<PersonPersonalInfo> parameter = query4.setParameter("x", 101);
 		System.out.println(parameter.getSingleResult());
 		
 		/* selecting objects based on multiple criteria */
@@ -73,7 +75,7 @@ public class App {
 		System.out.println("\n----------------------------------\n");
 		
 		list2.forEach(e->System.out.println(e.getEmail()));
-
+		
 		session.close();
 
 	}

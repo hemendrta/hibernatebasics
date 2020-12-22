@@ -70,10 +70,20 @@
 		<!-- Mapping for the Candidate Info class life-cycle example -->
 
 		<mapping class="com.hibernate.lifecycle.CandidateInfo" />
-		
+
 		<!-- Mapping for the Candidate Info class life-cycle example -->
 
 		<mapping class="com.hibernate.hql.PersonPersonalInfo" />
+
+		<!-- Mapping for the Employer com.hibernate.cascade// cascading 
+			example -->
+
+		<mapping class="com.hibernate.cascade.Employer" />
+
+		<!-- Mapping for the EmployerEmployee com.hibernate.cascade// cascading 
+			example -->
+
+		<mapping class="com.hibernate.cascade.EmployerEmployee" />
 
 	</session-factory>
 
